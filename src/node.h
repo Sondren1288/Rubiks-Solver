@@ -3,10 +3,20 @@
 #include <vector>
 template <typename T>
 class Node {
+    int id;
+    T value;
     public:
-        Node(T value, std::vector<Node> connections);
-        std::vector<Node> getNeighbours();
-        T getNode();
-        
+        Node(int id, T value);
+        T getContents();
+        // Connections?
+};
+template <typename T>
+class Edge {
+    public:
+        Node<T> n1;
+        Node<T> n2;
+        Edge(Node<T> n1, Node<T> n2);
+        std::vector<Node<T>> getNeighbours();
+        Node<T> getConnection(Node<T> n1);
 };
 #endif
