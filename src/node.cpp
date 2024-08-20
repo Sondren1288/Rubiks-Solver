@@ -1,5 +1,3 @@
-#include <vector>
-
 #include "node.h"
 
 
@@ -14,6 +12,15 @@ T Node<T>::getContents() {
     return value;
 }
 
+template <typename T>
+bool Node<T>::operator==(Node<T> other) {
+    if (other.id == id && other.value == value) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
 template <typename T>
 Edge<T>::Edge(Node<T> n1, Node<T> n2) {
@@ -31,3 +38,4 @@ Node<T> Edge<T>::getConnection(Node<T> n) {
         return nullptr;
     }
 }
+

@@ -8,6 +8,7 @@ class Node {
     public:
         Node(int id, T value);
         T getContents();
+        bool operator==(Node<T> other);
         // Connections?
 };
 template <typename T>
